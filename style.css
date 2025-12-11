@@ -30,13 +30,13 @@ body {
 
   /* lighter blue gradient */
   background: linear-gradient(
-      180deg,
-      #E6F1FF 0%,   /* light blue at the very top */
-      #4FA8FF 22%,  /* brighter sky blue */
-      #1E40AF 55%,  /* dark rich blue in the middle */
-      #0B2259 78%,  /* deepest blue band */
-      #2563EB 100%  /* medium blue again at the bottom */
-    );
+    180deg,
+    #D5E4FF 0%,   /* slightly darker light blue at the top */
+    #3C8CFF 22%,  /* stronger sky blue */
+    #15286F 50%,  /* dark rich blue in the middle */
+    #050F3F 78%,  /* very deep navy band */
+    #1B4ED8 100%  /* medium-dark blue at the bottom */
+  );
   color: #111827;
 }
 
