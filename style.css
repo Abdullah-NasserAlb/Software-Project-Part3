@@ -7,7 +7,6 @@
   --danger-dark: #b91c1c;
   --success: #16a34a;
   --warning: #d97706;
-  --bg: #0f172a;
   --bg-soft: #f3f4f6;
   --card-bg: #ffffff;
   --text-main: #111827;
@@ -22,17 +21,20 @@
   box-sizing: border-box;
 }
 
-/* main background for BOTH login + app */
+/* ---------- PAGE BACKGROUND (BLUE GRADIENT) ---------- */
+
 body {
   margin: 0;
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
 
-  /* blue gradient like your screenshot – not white, not too dark */
-  background: radial-gradient(circle at top left,
-    #1d4ed8 0,
-    #123b88 45%,
-    #0b1733 100%);
+  /* only blue shades */
+  background: radial-gradient(
+    circle at top left,
+    #4f8ffd 0%,   /* light blue */
+    #2f6df5 40%,  /* medium blue */
+    #1a3f97 100%  /* deeper blue */
+  );
   color: var(--text-main);
 }
 
@@ -57,19 +59,20 @@ body {
   overflow: hidden;
 }
 
-/* Decorative gradient blob */
+/* decorative light in ONLY blue shades */
 .auth-card::before {
   content: "";
   position: absolute;
   inset: -40%;
-  background: radial-gradient(circle at 10% 0, rgba(37, 99, 235, 0.16), transparent 55%),
-    radial-gradient(circle at 100% 120%, rgba(236, 72, 153, 0.18), transparent 55%);
+  background:
+    radial-gradient(circle at 10% 0, rgba(37, 99, 235, 0.18), transparent 55%),
+    radial-gradient(circle at 90% 120%, rgba(59, 130, 246, 0.18), transparent 55%);
   opacity: 0.8;
   pointer-events: none;
 }
 
 .auth-card * {
-  position: relative; /* keep content above ::before */
+  position: relative;
 }
 
 .auth-card h1 {
@@ -96,10 +99,10 @@ body {
 
 .auth-column {
   flex: 1 1 280px;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
   padding: 1.3rem 1.4rem;
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
   backdrop-filter: blur(6px);
 }
 
@@ -126,7 +129,7 @@ body {
 
 .auth-card form input:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
 }
 
 .auth-card form button {
@@ -140,7 +143,7 @@ body {
 .auth-card form button:hover {
   background: var(--primary-dark);
   transform: translateY(-1px);
-  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.4);
 }
 
 .auth-card form button:active {
@@ -161,10 +164,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(90deg, #1d4ed8, #0ea5e9);
+  background: linear-gradient(90deg, #2f80ed, #2563eb);
   color: white;
   padding: 0.9rem 1.7rem;
-  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.3);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.4);
   position: sticky;
   top: 0;
   z-index: 20;
@@ -210,7 +213,7 @@ body {
 .user-info button:hover {
   background: var(--danger-dark);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.5);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.6);
 }
 
 .user-info button:active {
@@ -223,7 +226,7 @@ body {
 .tab-bar {
   display: flex;
   flex-wrap: wrap;
-  background: #e5e7eb;  /* light strip under header */
+  background: #e5e7eb;
   padding: 0.5rem 0.8rem;
   gap: 0.45rem;
   justify-content: center;
@@ -248,7 +251,7 @@ body {
 .tab-btn.active {
   background: #ffffff;
   color: var(--primary-dark);
-  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.18);
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.2);
   transform: translateY(-1px);
 }
 
@@ -258,7 +261,7 @@ main {
   max-width: 1120px;
   margin: 1.7rem auto 2.2rem;
   padding: 0 1.5rem;
-  background: transparent; /* let the blue gradient show */
+  background: transparent;  /* let the blue gradient show */
 }
 
 .tab-section {
@@ -290,7 +293,7 @@ main {
   overflow: hidden;
 }
 
-/* small accent line on each card */
+/* small accent film on each card */
 .stat-card::before,
 .form-card::before {
   content: "";
@@ -343,7 +346,7 @@ form button {
 form input:focus,
 form select:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
 }
 
 form button {
@@ -356,7 +359,7 @@ form button {
 form button:hover {
   background: var(--primary-dark);
   transform: translateY(-1px);
-  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.5);
 }
 
 form button:active {
@@ -386,7 +389,7 @@ form button:active {
   background: #ffffff;
   border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
 }
 
 #budget-table th,
@@ -462,7 +465,7 @@ form button:active {
   background: #ffffff;
   border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
 }
 
 #report-table th,
@@ -484,7 +487,7 @@ form button:active {
 footer {
   text-align: center;
   padding: 1rem;
-  background: linear-gradient(90deg, #1d4ed8, #0ea5e9);
+  background: linear-gradient(90deg, #2f80ed, #2563eb);
   color: white;
   margin-top: 1rem;
   font-size: 0.85rem;
