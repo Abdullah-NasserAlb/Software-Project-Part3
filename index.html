@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Organizing a Personal Budget</title>
+  <title>Organizing a Personal Budget - Login</title>
+
+  <!-- Google font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+  <!-- Main styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -11,9 +15,10 @@
   <section id="auth-section">
     <div class="auth-card">
       <h1>Organizing a Personal Budget</h1>
-      <p class="subtitle">Sign up or log in to start managing your money.</p>
+      <p class="subtitle">Create an account or log in to manage your budget.</p>
 
       <div class="auth-forms">
+        <!-- Register -->
         <div class="auth-column">
           <h2>Create Account</h2>
           <form id="register-form">
@@ -24,6 +29,7 @@
           </form>
         </div>
 
+        <!-- Login -->
         <div class="auth-column">
           <h2>Login</h2>
           <form id="login-form">
@@ -38,202 +44,6 @@
     </div>
   </section>
 
-  <!-- MAIN APP -->
-  <section id="main-section" class="hidden">
-    <nav id="top-nav">
-      <div class="logo">Personal Budget App</div>
-      <div class="user-info">
-        <span id="user-email-label"></span>
-        <button id="logout-btn">Logout</button>
-      </div>
-    </nav>
-
-    <div class="tab-bar">
-      <button class="tab-btn active" data-target="dashboard-section">Dashboard</button>
-      <button class="tab-btn" data-target="transactions-section">Transactions</button>
-      <button class="tab-btn" data-target="budget-section">Budget Plan</button>
-      <button class="tab-btn" data-target="goals-section">Saving Goals</button>
-      <button class="tab-btn" data-target="reports-section">Reports</button>
-    </div>
-
-    <main>
-      <!-- DASHBOARD -->
-      <section id="dashboard-section" class="tab-section active">
-        <h2>Dashboard</h2>
-        <div class="card-grid">
-          <div class="stat-card">
-            <h3>Total Income</h3>
-            <p class="stat-number">$<span id="dash-total-income">0.00</span></p>
-          </div>
-          <div class="stat-card">
-            <h3>Total Expenses</h3>
-            <p class="stat-number">$<span id="dash-total-expense">0.00</span></p>
-          </div>
-          <div class="stat-card">
-            <h3>Remaining Balance</h3>
-            <p class="stat-number">$<span id="dash-balance">0.00</span></p>
-          </div>
-        </div>
-        <p id="dashboard-note" class="message"></p>
-      </section>
-
-      <!-- TRANSACTIONS -->
-      <section id="transactions-section" class="tab-section">
-        <h2>Transactions</h2>
-        <div class="two-column">
-          <div class="form-card">
-            <h3>Add Income</h3>
-            <form id="income-form">
-              <input id="income-desc" type="text" placeholder="Description" required />
-              <input id="income-amount" type="number" step="0.01" min="0" placeholder="Amount" required />
-              <input id="income-date" type="date" required />
-              <select id="income-category">
-                <option>Salary</option>
-                <option>Gift</option>
-                <option>Bonus</option>
-                <option>Other</option>
-              </select>
-              <button type="submit">Add Income</button>
-            </form>
-          </div>
-
-          <div class="form-card">
-            <h3>Add Expense</h3>
-            <form id="expense-form">
-              <input id="expense-desc" type="text" placeholder="Description" required />
-              <input id="expense-amount" type="number" step="0.01" min="0" placeholder="Amount" required />
-              <input id="expense-date" type="date" required />
-              <select id="expense-category">
-                <option>Food</option>
-                <option>Transport</option>
-                <option>Rent</option>
-                <option>Entertainment</option>
-                <option>Other</option>
-              </select>
-              <button type="submit">Add Expense</button>
-            </form>
-          </div>
-        </div>
-        <p id="transaction-message" class="message"></p>
-      </section>
-
-      <!-- BUDGET PLAN -->
-      <section id="budget-section" class="tab-section">
-        <h2>Budget Plan</h2>
-        <div class="form-card">
-          <h3>Create / Update Monthly Budget</h3>
-          <form id="budget-form">
-            <label>Budget month:</label>
-            <input id="budget-month" type="month" required />
-
-            <div class="budget-grid">
-              <div>
-                <label>Food limit ($)</label>
-                <input id="limit-food" type="number" min="0" step="0.01" value="0" />
-              </div>
-              <div>
-                <label>Transport limit ($)</label>
-                <input id="limit-transport" type="number" min="0" step="0.01" value="0" />
-              </div>
-              <div>
-                <label>Rent limit ($)</label>
-                <input id="limit-rent" type="number" min="0" step="0.01" value="0" />
-              </div>
-              <div>
-                <label>Other limit ($)</label>
-                <input id="limit-other" type="number" min="0" step="0.01" value="0" />
-              </div>
-            </div>
-            <button type="submit">Save Budget Plan</button>
-          </form>
-        </div>
-
-        <h3>Budget Status</h3>
-        <p id="budget-warning" class="message"></p>
-        <table id="budget-table">
-          <thead>
-            <tr>
-              <th>Category</th>
-              <th>Spent ($)</th>
-              <th>Limit ($)</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody id="budget-body"></tbody>
-        </table>
-      </section>
-
-      <!-- SAVING GOALS -->
-      <section id="goals-section" class="tab-section">
-        <h2>Saving Goals</h2>
-        <div class="form-card">
-          <h3>Add Saving Goal</h3>
-          <form id="goal-form">
-            <input id="goal-name" type="text" placeholder="Goal name (e.g. New laptop)" required />
-            <input id="goal-target" type="number" min="0" step="0.01" placeholder="Target amount" required />
-            <label>Deadline (optional)</label>
-            <input id="goal-deadline" type="date" />
-            <button type="submit">Save Goal</button>
-          </form>
-        </div>
-        <div id="goals-list" class="goal-list"></div>
-      </section>
-
-      <!-- REPORTS -->
-      <section id="reports-section" class="tab-section">
-        <h2>Reports</h2>
-        <div class="form-card">
-          <h3>Report Period</h3>
-          <form id="report-form">
-            <label>Start date:</label>
-            <input id="report-start" type="date" required />
-            <label>End date:</label>
-            <input id="report-end" type="date" required />
-            <button type="submit">Generate Report</button>
-          </form>
-        </div>
-
-        <div class="card-grid">
-          <div class="stat-card">
-            <h3>Income in period</h3>
-            <p class="stat-number">$<span id="rep-income">0.00</span></p>
-          </div>
-          <div class="stat-card">
-            <h3>Expenses in period</h3>
-            <p class="stat-number">$<span id="rep-expense">0.00</span></p>
-          </div>
-          <div class="stat-card">
-            <h3>Remaining</h3>
-            <p class="stat-number">$<span id="rep-remaining">0.00</span></p>
-          </div>
-        </div>
-
-        <h3>Transactions in period</h3>
-        <table id="report-table">
-          <thead>
-            <tr>
-              <th>Type</th>
-              <th>Date</th>
-              <th>Category</th>
-              <th>Description</th>
-              <th>Amount ($)</th>
-            </tr>
-          </thead>
-          <tbody id="report-body"></tbody>
-        </table>
-
-        <h3>Income vs Expense Chart</h3>
-        <canvas id="report-chart" width="400" height="200"></canvas>
-      </section>
-    </main>
-
-    <footer>
-      <p>© 2025 Organizing a Personal Budget – Course Project</p>
-    </footer>
-  </section>
-
-  <!-- JS LIBRARIES + APP SCRIPT -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-  <script src="script.js"></script>
+  <script src="login.js"></script>
 </body>
 </html>
