@@ -29,12 +29,7 @@ body {
     "Segoe UI", sans-serif;
 
   /* lighter blue gradient */
-  background: linear-gradient(
-    180deg,
-    #4fa8ff 0%,   /* very light sky blue at the top */
-    #2f80ed 60%,  /* mid-blue in the center */
-    #1a4fb8 100%  /* soft deep blue at the bottom */
-  );
+  background: linear-gradient(180deg, #F0F7FF 0%, #4FA8FF 25%, #2F80ED 60%, #1A4FB8 100%);
 
   color: #111827;
 }
