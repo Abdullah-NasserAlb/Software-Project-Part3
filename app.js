@@ -219,7 +219,7 @@ function renderGoals() {
     card.className = "goal-card";
     card.innerHTML = `
       <div class="goal-title">${g.name}</div>
-      <div class="goal-target">Target: $${g.target.toFixed(2)}${g.deadline ? " | Deadline: " + g.deadline : ""}</div>
+      <div class="goal-target">Target: OMR ${g.target.toFixed(2)}${g.deadline ? " | Deadline: " + g.deadline : ""}</div>
       <div class="goal-progress">Progress: ${pct.toFixed(1)}%</div>
       <div class="progress-bar"><div class="progress-fill" style="width:${pct}%;"></div></div>
     `;
