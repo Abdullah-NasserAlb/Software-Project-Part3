@@ -246,9 +246,7 @@ function renderDashboard() {
     noteEl.textContent = "You are on track. Keep monitoring your spending.";
   }
 }
-document.querySelectorAll('.currency').forEach(el => {
-  el.textContent = el.textContent.replace('$', 'OMR');
-});
+
 let amount = 1234.5;
 let formatted = new Intl.NumberFormat('en-OM', {
   style: 'currency',
