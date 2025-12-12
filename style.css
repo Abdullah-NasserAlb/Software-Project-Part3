@@ -31,9 +31,9 @@ body {
   background: linear-gradient(
     180deg,
     #D5E4FF 0%,   /* slightly darker light blue at the top */
-    #3C8CFF 22%,  /* stronger sky blue */
-    #15286F 60%,  /* dark rich blue in the middle */
-    #050F3F 83%,  /* very deep navy band */
+    #3C8CFF 32%,  /* stronger sky blue */
+    #15286F 75%,  /* dark rich blue in the middle */
+    /*#050F3F 83%,   very deep navy band */
     #1B4ED8 100%  /* medium-dark blue at the bottom */
   );
   
