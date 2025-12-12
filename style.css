@@ -28,15 +28,15 @@ body {
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
 
-  /* lighter blue gradient */
   background: linear-gradient(
     180deg,
     #D5E4FF 0%,   /* slightly darker light blue at the top */
     #3C8CFF 22%,  /* stronger sky blue */
     #15286F 50%,  /* dark rich blue in the middle */
-    #1B4ED8 78%,  /* medium-dark blue at the bottom */ 
-    #050F3F 100%  /* very deep navy band */
+    #050F3F 78%,  /* very deep navy band */
+    #1B4ED8 100%  /* medium-dark blue at the bottom */
   );
+  
   color: #111827;
 }
 
